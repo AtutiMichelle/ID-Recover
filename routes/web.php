@@ -17,4 +17,12 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+// Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
+//     Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
+// });
+
+// Route::middleware(['auth', 'user'])->prefix('user')->group(function () {
+//     Route::get('/dashboard', [UserDashboardController::class, 'index'])->name('user.dashboard');
+// });
+
 require __DIR__.'/auth.php';

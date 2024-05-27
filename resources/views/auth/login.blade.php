@@ -18,10 +18,10 @@
                 <a href="{{ url('/') }}" class="rounded-md px-9 py-4 ring-3 ring-transparent transition hover:text-black hover:shadow-md focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-black dark:focus-visible:ring-white">
                     Home
                 </a>
-                <a href="{{ url('/about') }}" class="rounded-md px-9 py-4 ring-3 ring-transparent transition hover:text-black hover:shadow-md focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-black dark:focus-visible:ring-white">
+                <a href="/#about-section" class="rounded-md px-9 py-4 ring-3 ring-transparent transition hover:text-black hover:shadow-md focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-black dark:focus-visible:ring-white">
                     About
                 </a>
-                <a href="{{ url('/services') }}" class="rounded-md px-9 py-4 ring-3 ring-transparent transition hover:text-black hover:shadow-md focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-black dark:focus-visible:ring-white">
+                <a href="/#services-section" class="rounded-md px-9 py-4 ring-3 ring-transparent transition hover:text-black hover:shadow-md focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-black dark:focus-visible:ring-white">
                     Services
                 </a>
                 
