@@ -3,21 +3,33 @@
 @tailwind utilities;
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
     scroll-behavior: smooth; /* Add smooth scrolling */
 }
-.about-section,
-.services-section {
+.about-section{
     text-align: center;
     padding: 40px 20px 20px;
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 20px;
     border-radius: 8px;
+
 }
+
+.services-section{
+    text-align: center;
+    padding: 40px 20px 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: -20px;
+    border-radius: 16px;
+
+}
+
+
 .about-section h1,
 .services-section h1 {
     font-size: 2.5em;
@@ -135,7 +147,8 @@ body {
     .card {
         width: 100%; /* Full width on very small screens */
     }
-}
+} 
+
 
 /* original css landing page  */
 /* ! tailwindcss v3.4.1 | MIT License | https://tailwindcss.com*,::after,::before

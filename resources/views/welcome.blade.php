@@ -131,7 +131,7 @@
      <!-- About Section -->
 
       <!-- Services Section -->
-    <div id="services-section" class="services-section">
+      <div id="services-section" class="services-section">
         <h1>Our Services</h1>
         <div class="container">
             <div class="card">
@@ -156,7 +156,10 @@
                 <div class="card-content">
                     <h5>Automated Replacement Process</h5>
                     <p>If an ID is not found, the system automates the replacement process, including uploading abstracts, handling payments, and notifying students when their new ID is ready.</p>
-     <!-- Services Section -->
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
                     
                     {{-- <footer class="py-16 text-center text-sm text-black dark:text-white/70">
