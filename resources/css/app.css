@@ -2,12 +2,185 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+
+            
+/* Ensure the navbar is centered */
+/* Ensure the navbar is correctly styled */
+/* Ensure the navbar is correctly styled */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Center align the main navigation */
+.navbar-nav.flex-grow-1 {
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-nav .nav-item {
+    padding: 0 40px; /* Add padding between links */
+    transition: color 0.3s; /* Smooth transition on hover */
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #0077f7; /* Change color on hover */
+    text-decoration: underline; /* Underline on hover */
+}
+
+.navbar-nav .nav-link.active {
+    font-weight: bold; /* Highlight active link */
+}
+
+.about-section {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.intro-section {
+    margin-bottom: 40px;
+}
+
+.intro-section img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.intro-text h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.intro-text p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.card {
+    height: 100%; /* Ensure all cards have the same height */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Prevent overflow */
+    background-color: #ffffff; /* White background */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition for background and shadow */
+}
+
+.card-body {
+    padding: 20px; /* Add padding */
+}
+
+.card-body h5 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #064ccf; /* Apply color */
+}
+
+.card-body hr {
+    border: 0;
+    height: 1px;
+    background: #0d0000; /* Horizontal line style */
+    margin-bottom: 20px;
+}
+
+.card-body p {
+    font-size: 1rem;
+    color: #333;
+}
+
+.card:hover {
+    background-color: #b2abe1; /* Change color on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 3rem;
+    color: #333;
+}
+
+.services-section {
+    padding: 50px 0;
+}
+
+.services-section h1 {
+    color: #333;
+}
+
+.services-section p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.services-section .card {
+    height: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #ffffff;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.services-section .card-body {
+    padding: 20px;
+}
+
+.services-section .card-body h5 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #064ccf; /* Apply color */
+}
+
+.services-section .card-body hr {
+    border: 0;
+    height: 1px;
+    background: #0d0000; /* Horizontal line style */
+    margin-bottom: 20px;
+}
+
+.services-section .card-body p {
+    font-size: 1rem;
+    color: #333;
+}
+
+.services-section .card:hover {
+    background-color: #b2abe1; /* Change color on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-fade .carousel-item {
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-item {
+    opacity: 0;
+}
+
+.carousel-item.active {
+    opacity: 1;
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.btn-custom {
+    margin-top: 1rem;
+    margin-right: 0.5rem;
+}
+
+
+/* body {
     font-family: 'Times New Roman', Times, serif;
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
-    scroll-behavior: smooth; /* Add smooth scrolling */
+    scroll-behavior: smooth; /* Add smooth scrolling 
 }
 .about-section{
     text-align: center;
@@ -43,7 +216,7 @@ body {
     justify-content: center;
     padding: 40px;
     background-color: #fff;
-    /* box-shadow: 0 4px 8px rgba(0,0,0,0.1); */
+    /* box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
     margin: 20px;
     border-radius: 8px;
 }
@@ -69,7 +242,7 @@ body {
     width: 90%;
     margin: 20px auto;
     display: flex;
-    flex-wrap: nowrap; /* Prevents wrapping to keep all cards in one row */
+    flex-wrap: nowrap; /* Prevents wrapping to keep all cards in one row 
     gap: 20px;
     justify-content: space-between;
 }
@@ -84,7 +257,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(89, 0, 255, 0.1);
     overflow: hidden;
-    width: 37%; /* Adjusted width to fit four cards in one row */
+    width: 37%; /* Adjusted width to fit four cards in one row *
     display: flex;
     flex-direction: column;
     transition: transform 0.3s;
@@ -126,15 +299,15 @@ body {
 }
 @media (max-width: 1200px) {
     .container {
-        flex-wrap: wrap; /*Allow wrapping on smaller screens */
+        flex-wrap: wrap; /*Allow wrapping on smaller screens *
         justify-content: center;
     }
     .card {
-        width: 45%; /* Adjust card width for smaller screens */
-        margin-bottom: 20px; /* Add space between rows when wrapping */
+        width: 45%; /* Adjust card width for smaller screens *
+        margin-bottom: 20px; /* Add space between rows when wrapping *
     }
     .intro-section {
-        flex-direction: column; /* Stack the image and text vertically */
+        flex-direction: column; /* Stack the image and text vertically *
         text-align: center;
     }
     .intro-section img,
@@ -145,10 +318,10 @@ body {
 }
 @media (max-width: 768px) {
     .card {
-        width: 100%; /* Full width on very small screens */
+        width: 100%; /* Full width on very small screens *
     }
-} 
-
+}  */
+/* end of css that i used for before homepage */
 
 /* original css landing page  */
 /* ! tailwindcss v3.4.1 | MIT License | https://tailwindcss.com*,::after,::before
