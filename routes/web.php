@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\SocialLoginController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -64,3 +65,6 @@ require __DIR__.'/auth.php';
 
 Route::get('admin/dashboard' , [LoginController::class , 'index'])->
 middleware(['auth' , 'admin']);
+
+Route::get('/socialite/{driver}', [SocialLoginController::class , 'toProvider']) ->where('driver','github|google');
+Route::get('/auth/{driver}/login', [SocialLoginController::class , 'handleCallBack']) ->where('driver','github|google');

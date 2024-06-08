@@ -47,10 +47,28 @@
                     <ul class="navbar-nav ms-auto"> <!-- Right aligned -->
                         @if (Route::has('login'))
                             @auth
-                                <li class="nav-item">
+                                <li>
                                     <a href="{{ url('/dashboard') }}" class="nav-link rounded-md px-3 py-2 ring-3 ring-transparent transition hover:text-black hover:shadow-md focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-black dark:focus-visible:ring-white">
-                                        Dashboard
+                                        <div class="text-black">Welcome {{ Auth::user()->name }}</div>
+
                                     </a>
+
+                                    <div class="mt-3 space-y-1">
+                <x-responsive-nav-link :href="route('profile.edit')">
+                    {{ __('Profile') }}
+                </x-responsive-nav-link>
+
+                <!-- Authentication -->
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+
+                    <x-responsive-nav-link :href="route('logout')"
+                            onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                        {{ __('Log Out') }}
+                    </x-responsive-nav-link>
+                </form>
+            </div>
                                 </li>
                             @else
                                 <li class="nav-item">
