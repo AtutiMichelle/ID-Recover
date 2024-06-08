@@ -4,13 +4,14 @@
 
 
             
-/* Ensure the navbar is centered */
-/* Ensure the navbar is correctly styled */
-/* Ensure the navbar is correctly styled */
+/* the navbar */
+
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative; /* Add position relative */
+    z-index: 1000; /* Ensure navbar stays on top */
 }
 
 /* Center align the main navigation */
@@ -33,6 +34,9 @@
     font-weight: bold; /* Highlight active link */
 }
 
+/* the navbar */
+
+/* the about */
 .about-section {
     padding: 50px 0;
     background-color: #f9f9f9;
@@ -102,17 +106,37 @@ h1 {
     color: #333;
 }
 
+/* the about */
+
+/* the services */
+
 .services-section {
     padding: 50px 0;
+    position: relative;
+    z-index: 1;
+    background-image: url('/back2.jpg') no-repeat center center/cover;
 }
 
-.services-section h1 {
-    color: #333;
+.services-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Adjust the alpha to control the transparency */
+    z-index: -1;
+}
+
+.services-section h1, .services-section p {
+    color: #fff; /* Changed to white for better readability */
+    position: relative;
+    z-index: 2;
 }
 
 .services-section p {
     font-size: 1.2rem;
-    color: #666;
+    color: #ccc; /* Changed to a lighter color for better readability */
 }
 
 .services-section .card {
@@ -122,6 +146,8 @@ h1 {
     overflow: hidden;
     background-color: #ffffff;
     transition: background-color 0.3s, box-shadow 0.3s;
+    position: relative;
+    z-index: 2;
 }
 
 .services-section .card-body {
@@ -131,13 +157,13 @@ h1 {
 .services-section .card-body h5 {
     font-size: 1.5rem;
     margin-bottom: 10px;
-    color: #064ccf; /* Apply color */
+    color: #064ccf;
 }
 
 .services-section .card-body hr {
     border: 0;
     height: 1px;
-    background: #0d0000; /* Horizontal line style */
+    background: #0d0000;
     margin-bottom: 20px;
 }
 
@@ -147,10 +173,13 @@ h1 {
 }
 
 .services-section .card:hover {
-    background-color: #b2abe1; /* Change color on hover */
+    background-color: #b2abe1;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+/*the services */
+
+/*user page*/
 .carousel-fade .carousel-item {
     transition: opacity 1s ease-in-out;
 }
@@ -171,8 +200,15 @@ h1 {
 
 .btn-custom {
     margin-top: 1rem;
-    margin-right: 0.5rem;
+    margin-right: 5.5rem;
+    margin-left: 5.5rem;
+    width: 150px; /* Set a fixed width for the buttons */
 }
+
+.btn-group {
+    margin-top: 1rem; /* Add space between the buttons */
+}
+ /*user page*/
 
 
 /* body {

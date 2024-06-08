@@ -52,11 +52,11 @@
                 <h5>Welcome to ID Recover</h5>
                 <p>Your go-to solution for recovering and managing lost School IDs.</p>
                 <p>We help you find and replace your lost IDs with ease.</p>
-                <div>
+                <div class="btn-group">
                     <a href="" class="btn btn-primary btn-custom">Post ID</a>
                     <a href="" class="btn btn-secondary btn-custom">View IDs</a>
                 </div>
-            </div>
+            </div>            
         </div>
     </div>
 </div>
