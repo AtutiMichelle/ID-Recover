@@ -35,6 +35,8 @@ class SocialLoginController extends Controller
             ]);
         }
 
+        //Added coment
+
         // Create or update the SocialLogin record
         SocialLogin::updateOrCreate(
             ['provider' => $driver, 'provider_id' => $user->getId()],
