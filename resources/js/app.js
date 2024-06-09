@@ -24,3 +24,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+const loginsec=document.querySelector('.login-section1')
+const loginlink=document.querySelector('.login-link')
+const registerlink=document.querySelector('.register-link')
+registerlink.addEventListener('click',()=>{
+    loginsec.classList.add('active')
+})
+loginlink.addEventListener('click',()=>{
+    loginsec.classList.remove('active')
+})
