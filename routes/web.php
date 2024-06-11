@@ -35,6 +35,7 @@ Route::get('/socialite/{driver}', [SocialLoginController::class , 'toProvider'])
 Route::get('/auth/{driver}/login', [SocialLoginController::class , 'handleCallBack']) ->where('driver','github|google');
 
 Route::get('/submit_found_id', [FoundIdController::class, 'showSubmitFoundIdForm'])->name('submit_found_id_form');
+Route::post('/submit_found_id', [FoundIdController::class, 'submitFoundId'])->name('submit_found_id');
 Route::put('/found_id/{id}', [FoundIdController::class, 'updateFoundId'])->name('update_found_id');
 
 
