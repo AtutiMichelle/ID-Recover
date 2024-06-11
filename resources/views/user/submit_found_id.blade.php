@@ -121,50 +121,64 @@
             <!-- Main content area -->
             <div class="container mt-4">
                 <div class="text-center">
-                    <h1>User Dashboard</h1>
-                  
-                    <div class="row">
-                        <div class="col-sm-4 mb-3 mb-sm-0">
-                          <div class="card">
-                            <div class="card-body">
-                              <h5 class="card-title">Special title treatment</h5>
-                              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                              <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-sm-4">
-                          <div class="card">
-                            <div class="card-body">
-                              <h5 class="card-title">Special title treatment</h5>
-                              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                              <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="card">
-                              <div class="card-body">
-                                <h5 class="card-title">Special title treatment</h5>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                              </div>
-                            </div>
-                          </div>
-                      </div>
-                </div>
+<div class="login-section">
+    <div class="form-box login">
+        <x-auth-session-status class="mb-4" :status="session('status')" />
+        <form method="POST" action="{{ route('submit_found_id') }}" enctype="multipart/form-data">
+            @csrf
+            <h2>Submit Found ID</h2>
+            <div class="input-box">
+                <span class="icon"><i class="fa-solid fa-user"></i></span>
+                <x-text-input id="name_on_id" class="block mt-1 w-full" type="text" name="name_on_id" required autofocus />
+                <label>Name on ID</label>
+                <x-input-error :messages="$errors->get('name_on_id')" class="mt-2" />
             </div>
-        </div>
-    </div>
-   
+            <div class="input-box">
+                <span class="icon"><i class='fas fa-user-graduate'></i></span>
+                <x-text-input id="course_on_id" class="block mt-1 w-full" type="text" name="course_on_id" required />
+                <label>Course on ID</label>
+                <x-input-error :messages="$errors->get('course_on_id')" class="mt-2" />
+            </div>
+            
+            <div class="input-box">
+                <span class="icon"><i class='fas fa-map-marker-alt'></i></span>
+                <x-text-input id="location_found" class="block mt-1 w-full" type="text" name="location_found" required />
+                <label>Location Found</label>
+                <x-input-error :messages="$errors->get('location_found')" class="mt-2" />
+            </div>
+            <div class="input-box">
+                <span class="icon"><i class='fas fa-calendar-alt'></i></span>
+                <x-text-input id="date_found" class="block mt-1 w-full" type="date" name="date_found" required />
+                <label>Date Found</label>
+                <x-input-error :messages="$errors->get('date_found')" class="mt-2" />
+            </div>
+            <div class="input-box">
+                <span class="icon"><i class='fas fa-envelope'></i></span>
+                <x-text-input id="finder_email" class="block mt-1 w-full" type="text" name="finder_email" required />
+                <label for="finder_email">Finder's Email</label>
+                <x-input-error :messages="$errors->get('finder_email')" class="mt-2" />
+            </div>
+            <div class="input-box file-input">
+                <span class="icon"><i class='fas fa-image'></i></span>
+                <input id="image_url" type="file" name="image_url" accept="image/*" required />
+                <label for="image_url">Upload Image</label>
+                <x-input-error :messages="$errors->get('image_url')" class="mt-2" />
+            </div>
+            <!-- Add input fields for other data such as finder's name, finder's contact, etc. -->
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-        crossorigin="anonymous"></script>
-    <script>
-        function toggleSidebar() {
-            document.getElementById('sidebar').classList.toggle('expand');
-        }
-    </script>
+            <button class="btn" type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+crossorigin="anonymous"></script>
+
 </body>
 </html>
