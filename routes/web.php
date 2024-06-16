@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SocialLoginController;
+use App\Http\Controllers\FoundIdController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -24,42 +25,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-/*for google auth*/
-// Route::get('/auth/redirect',function(){
-//     return Socialite::driver('github')->redirect();
-// });
-
-// Route::get('/auth/github' , function(){
-//     try{
-//         $user=Socialite::driver('github')->user();
-//     }
-//     catch(\Laravel\Socialite\Two\InvalidStateException $e) {
-//         return redirect('/auth/github');
-//     }
-
-//     $newUser = \App\Models\User::firstOrCreate(
-//         ['email' => $user->email],
-//         [
-//             'name'=>$user->name,
-//             'password'=> Hash::make(Str::random(24)),
-//         ]
-//         );
-
-//         Auth::guard('users')->login($newUser);
-
-//         return redirect('/views/user');
-// });
-
-/*for google auth*/
-
-// Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
-//     Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
-// });
-
-// Route::middleware(['auth', 'user'])->prefix('user')->group(function () {
-//     Route::get('/dashboard', [UserDashboardController::class, 'index'])->name('user.dashboard');
-// });
-
 
 require __DIR__.'/auth.php';
 
@@ -68,3 +33,10 @@ middleware(['auth' , 'admin']);
 
 Route::get('/socialite/{driver}', [SocialLoginController::class , 'toProvider']) ->where('driver','github|google');
 Route::get('/auth/{driver}/login', [SocialLoginController::class , 'handleCallBack']) ->where('driver','github|google');
+
+Route::get('/submit_found_id', [FoundIdController::class, 'showSubmitFoundIdForm'])->name('submit_found_id_form');
+Route::post('/submit_found_id', [FoundIdController::class, 'submitFoundId'])->name('submit_found_id');
+Route::put('/found_id/{id}', [FoundIdController::class, 'updateFoundId'])->name('update_found_id');
+
+
+

@@ -94,8 +94,8 @@
               <div class="carousel-item active">
                 <img src="{{ asset('background3.jpg') }}" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                  <h5>First slide label</h5>
-                  <p>Some representative placeholder content for the first slide.</p>
+                  <h5>Welcome to ID Recover</h5>
+                  <p> Our system ensures lost IDs are returned efficiently. Report losses easily and facilitate quick returns. Keeping our school community connected..</p>
                 </div>
               </div>
               <div class="carousel-item">
