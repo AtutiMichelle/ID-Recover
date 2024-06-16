@@ -209,7 +209,7 @@ h1 {
 }
  /*user page*/
 
-  /*login and registration page*/
+ /*login and registration page*/
  .background1{
    
     background-position: center;
@@ -407,7 +407,6 @@ h1 {
 .create-account1 p a:hover{
     text-decoration: underline;
 }
- 
 /*login and registration page*/
 /*icons for userpage*/
 .user-info {
@@ -561,10 +560,8 @@ h1 {
             transition: all .2s ease-out;
         }
 
-        /* External CSS file */
+        /* form for lost ids */
 
-/* Center the form vertically and horizontally */
-/* Add these styles to your existing CSS file */
 
 .login-section {
     display: flex;
@@ -673,7 +670,9 @@ h1 {
 
 
         
-/* sidebar */
+   /* form for lost ids */
+
+      
 
 /* body {
     font-family: 'Times New Roman', Times, serif;

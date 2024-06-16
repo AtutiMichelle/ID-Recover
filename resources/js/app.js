@@ -80,3 +80,4 @@ function showFoundIdForm() {
     `;
     mainContent.innerHTML = formHtml;
 }
+
