@@ -11,11 +11,13 @@ class FoundId extends Model
 
     protected $fillable = [
         'user_id',
+        'admission_on_id',
         'name_on_id',
         'course_on_id',
         'location_found',
         'date_found',
         'finder_email',
+        'finder_phone_number',
         'image_url',
     ];
 

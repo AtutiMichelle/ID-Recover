@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('found_ids', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->string('admission_on_id');
             $table->string('name_on_id');
             $table->string('course_on_id');
             $table->string('location_found');

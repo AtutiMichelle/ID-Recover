@@ -39,17 +39,10 @@
                         </form>
                 </li>
                 <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
+                    <a href="{{ route('dashboard') }}" class="sidebar-link">
                         <i class="lni lni-agenda"></i>
                         <span>Dashboard</span>
                     </a>
-                </li>
-                <li class="sidebar-item">
-                    <a href="#" class="sidebar-link" >
-                        <i class="fas fa-clipboard-list"></i>
-                        <span>View Lost IDs</span>
-                    </a>
-                   
                 </li>
                 <li class="sidebar-item">
                     <a href="{{ route('submit_found_id') }}" class="sidebar-link" onclick="showFoundIdForm();">
@@ -58,9 +51,17 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
+                    <a href="{{ route('retrieve_posted_id') }}" class="sidebar-link" >
+                        <i class="fas fa-clipboard-list"></i>
+                        <span>View Lost IDs</span>
+                    </a>
+                   
+                </li>
+               
+                <li class="sidebar-item">
+                    <a href="{{ route('id_replacement_form') }}" class="sidebar-link">
                         <i class="lni lni-popup"></i>
-                        <span>Notification</span>
+                        <span>ID Replacement</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
@@ -129,6 +130,12 @@
             <h2>Submit Found ID</h2>
             <div class="input-box">
                 <span class="icon"><i class="fa-solid fa-user"></i></span>
+                <x-text-input id="admission_on_id" class="block mt-1 w-full" type="text" name="admission_on_id" required autofocus />
+                <label>Admission On ID</label>
+                <x-input-error :messages="$errors->get('admission_on_id')" class="mt-2" />
+            </div>
+            <div class="input-box">
+                <span class="icon"><i class="fa-solid fa-user"></i></span>
                 <x-text-input id="name_on_id" class="block mt-1 w-full" type="text" name="name_on_id" required autofocus />
                 <label>Name on ID</label>
                 <x-input-error :messages="$errors->get('name_on_id')" class="mt-2" />
@@ -157,6 +164,12 @@
                 <x-text-input id="finder_email" class="block mt-1 w-full" type="text" name="finder_email" required />
                 <label for="finder_email">Finder's Email</label>
                 <x-input-error :messages="$errors->get('finder_email')" class="mt-2" />
+            </div>
+            <div class="input-box">
+                <span class="icon"><i class='fas fa-envelope'></i></span>
+                <x-text-input id="finder_phone_number" class="block mt-1 w-full" type="text" name="finder_phone_number" required />
+                <label for="finder_phone_number">Finder's Phone Number</label>
+                <x-input-error :messages="$errors->get('finder_phone_number')" class="mt-2" />
             </div>
             <div class="input-box file-input">
                 <span class="icon"><i class='fas fa-image'></i></span>

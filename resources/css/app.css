@@ -567,13 +567,13 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 150vh;
     background-color: #f0f2f5; /* Optional background color for the page */
 }
 
 .form-box.login {
     background: #fff;
-    padding: 40px;
+    padding: 60px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     max-width: 400px;
@@ -638,9 +638,9 @@ h1 {
 .input-box input[type="email"]:valid + label,
 .input-box input[type="date"]:valid + label,
 .input-box input[type="file"]:valid + label {
-    top: -10px;
+    top: -20px;
     left: 20px;
-    font-size: 12px;
+    font-size: 15px;
     color: #007bff;
 }
 
@@ -671,6 +671,52 @@ h1 {
 
         
    /* form for lost ids */
+
+   /* table for posted ids */
+
+   .custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+}
+
+.custom-table th,
+.custom-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.custom-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    text-align: left;
+}
+
+.custom-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.custom-table tr:hover {
+    background-color: #ddd;
+}
+
+.custom-table img {
+    width: 100px;
+    height: auto;
+}
+
+.input-group .form-control {
+    border-radius: 0;
+}
+
+.input-group .btn-primary {
+    border-radius: 0;
+}
+
+ 
+/* table for posted ids */
 
       
 

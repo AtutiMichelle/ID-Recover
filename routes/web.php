@@ -6,6 +6,7 @@ use Laravel\Socialite\Facades\Socialite;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SocialLoginController;
 use App\Http\Controllers\FoundIdController;
+use App\Http\Controllers\IdReplacementController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -36,7 +37,13 @@ Route::get('/auth/{driver}/login', [SocialLoginController::class , 'handleCallBa
 
 Route::get('/submit_found_id', [FoundIdController::class, 'showSubmitFoundIdForm'])->name('submit_found_id_form');
 Route::post('/submit_found_id', [FoundIdController::class, 'submitFoundId'])->name('submit_found_id');
-Route::put('/found_id/{id}', [FoundIdController::class, 'updateFoundId'])->name('update_found_id');
+
+Route::get('/retrieve_posted_id', [FoundIdController::class, 'retrievePostedId'])->name('retrieve_posted_id');
+Route::get('/retrieve_posted_id', [FoundIdController::class, 'retrievePostedId'])->name('retrieve_posted_id');
+
+Route::get('/id_replacement', [IdReplacementController::class, 'showIdReplacementForm'])->name('id_replacement_form');
+Route::post('/submit-id-replacement', [IdReplacementController::class, 'submitIdReplacement'])->name('submit_id_replacement');
+
 
 
 
