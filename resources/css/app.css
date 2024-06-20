@@ -2,7 +2,130 @@
 @tailwind components;
 @tailwind utilities;
 
-            
+.container3 {
+    height: 80vh;
+    width: 100%;
+    background: #a295f0;
+    position: relative;
+    overflow: hidden;
+}
+
+.wave1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 15%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wave1 img {
+    width: 100%;
+    height: auto;
+}
+
+.main-content1 {
+    width: 75%;
+    padding-top: 100px;
+    margin-left: 5%; /* Adjusted from 20% to 25% */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column; /* Align items in a column */
+}
+
+
+.image-pista1, .main-text1 {
+    flex-basis: 100%; /* Full width for column layout */
+    text-align: center; /* Center align text */
+}
+
+.image-pista1 {
+    margin-bottom: 20px; /* Add space between sections */
+}
+
+.main-text1 {
+    width: 40%; /* Restrict the width of the main text to avoid overlap */
+    margin: 0 auto; /* Center the main text within its container */
+}
+
+.main-text1 h1 {
+    font-size: 60px;
+    letter-spacing: 1px;
+    color: #000000;
+}
+
+.main-text1 p {
+    margin-top: 10px;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+.main-text1 button {
+    margin-top: 2.5rem;
+    outline: none;
+    border: none;
+    font-size: 18px;
+    padding: 0.5rem 2.5rem 0.5rem 1rem;
+    border-radius: 0 50% 50% 0;
+    background-color: #494234;
+    color: white;
+    cursor: pointer;
+}
+
+.swiper {
+    width: 20rem;
+}
+
+.swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right1 {
+    position: absolute;
+    right: 4%;
+    bottom: 20%;
+}
+
+.box1 {
+    display: flex;
+    align-items: center;
+}
+
+.right1 .box1 .image1 img {
+    width: 60%;
+}
+
+.image1 {
+    margin-top: 2rem;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    box-shadow: -5px 5px 17px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+}
+
+.image1:hover {
+    background-color: rgba(73, 66, 52, 0.7);
+}
+
+.box1 .inner-box1 {
+    margin: 1.5rem 0 0 1rem;
+}
+
+.box1 .inner-box1 p {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
 /* the navbar */
 
 .navbar {
@@ -457,7 +580,7 @@ h1 {
             min-width: 70px;
             z-index: 1000;
             transition: all .25s ease-in-out;
-            background-color: #1010be;
+            background-color: #a295f0;
             display: flex;
             flex-direction: column;
         }
@@ -567,7 +690,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 150vh;
+    height: 140vh;
     background-color: #f0f2f5; /* Optional background color for the page */
 }
 
@@ -654,7 +777,7 @@ h1 {
     font-size: 12px;
 }
 
-.btn {
+.btn3 {
     background: #007bff;
     color: #fff;
     border: none;
@@ -664,7 +787,7 @@ h1 {
     transition: background-color 0.2s;
 }
 
-.btn:hover {
+.btn3:hover {
     background: #0056b3;
 }
 

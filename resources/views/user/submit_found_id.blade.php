@@ -156,7 +156,7 @@
             <div class="input-box">
                 <span class="icon"><i class='fas fa-calendar-alt'></i></span>
                 <x-text-input id="date_found" class="block mt-1 w-full" type="date" name="date_found" required />
-                <label>Date Found</label>
+                <label for='date_found'>Date Found</label>
                 <x-input-error :messages="$errors->get('date_found')" class="mt-2" />
             </div>
             <div class="input-box">
@@ -172,14 +172,14 @@
                 <x-input-error :messages="$errors->get('finder_phone_number')" class="mt-2" />
             </div>
             <div class="input-box file-input">
-                <span class="icon"><i class='fas fa-image'></i></span>
+                {{-- <span class="icon"><i class='fas fa-image'></i></span> --}}
                 <input id="image_url" type="file" name="image_url" accept="image/*" required />
-                <label for="image_url">Upload Image</label>
+                <label for="image_url"></label>
                 <x-input-error :messages="$errors->get('image_url')" class="mt-2" />
             </div>
             <!-- Add input fields for other data such as finder's name, finder's contact, etc. -->
 
-            <button class="btn" type="submit">Submit</button>
+            <button class="btn3" type="submit">Submit</button>
         </form>
     </div>
 </div>
