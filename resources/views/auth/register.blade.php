@@ -5,8 +5,7 @@
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
 </head>
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+<nav class="navbar navbar-expand-lg navbar-light sticky-top">
   <div class="container-fluid">
       <a class="navbar-brand" href="#">ID Recover</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -68,12 +67,11 @@
                   <x-text-input id="password" type="password" name="password" required placeholder="Password" />
                   <x-input-error :messages="$errors->get('password')" class="mt-2" />
               </div>
-              <div class="remember-password">
-                  <label for="remember_me">
-                      <input id="remember_me" type="checkbox" name="remember"> Remember Me
-                  </label>
-                  <a href="{{ route('password.request') }}">Forget Password</a>
-              </div>
+              <div class="terms-and-conditions">
+                <label>
+                    <input type="checkbox" name="terms" required> I agree that my school ID information may be made public.
+                </label>
+            </div>
               <input type="submit" value="Login" class="btn solid" />
               <p class="social-text">Or Sign in with social platforms</p>
               <div class="social-media">
@@ -142,7 +140,7 @@
               <p>Lost your school ID? Our system helps you report and recover lost IDs quickly. Join us in keeping our school connected and secure.</p>
               <button class="btn transparent" id="sign-in-btn">Sign in</button>
           </div>
-          <img src="reg.svg" class="image" alt="" />
+          <img src="login.svg" class="image" alt="" />
       </div>
   </div>
 </div>

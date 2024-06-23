@@ -22,7 +22,8 @@
 
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+          
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">ID Recover</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -84,45 +85,53 @@
             </div>
         </nav>
 
-        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        {{-- landing-page background --}}
+        <div class="container3">
+            <div class="wave1">
+                <img src="{{ asset('download.jpeg') }}" alt="School ID Image">
             </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="{{ asset('background3.jpg') }}" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Welcome to ID Recover</h5>
-                  <p> Our system ensures lost IDs are returned efficiently. Report losses easily and facilitate quick returns. Keeping our school community connected..</p>
+            <div class="main-content1">
+                <div class="image-pista1">
+                    
                 </div>
-              </div>
-              <div class="carousel-item">
-                <img src="{{ asset('background3.jpg') }}" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Second slide label</h5>
-                  <p>Some representative placeholder content for the second slide.</p>
+                <div class="main-text1">
+                    <h1>ID Recover</h1>
+                    <p>Efficiently replace your lost or stolen school ID with ease. Our system ensures quick recovery and replacement for all students.</p>
+                   
                 </div>
-              </div>
-              <div class="carousel-item">
-                <img src="{{ asset('background3.jpg') }}" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Third slide label</h5>
-                  <p>Some representative placeholder content for the third slide.</p>
-                </div>
-              </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-
+            <div class="right1">
+                <div class="box1">
+                    <div class="image1">
+                        <img src="find.svg" alt="Step 1 Image">
+                    </div>
+                    <div class="inner-box1">
+                        <h3>Find Lost IDs</h3>
+                        <p>Quickly find your lost school ID online.</p>
+                    </div>
+                </div>
+                <div class="box1">
+                    <div class="image1">
+                        <img src="usercheck.svg" alt="Step 2 Image">
+                    </div>
+                    <div class="inner-box1">
+                        <h3>User-Friendly</h3>
+                <p>Our system is easy to use</p>
+                    </div>
+                </div>
+                <div class="box1">
+                    <div class="image1">
+                        <img src="idcard.svg" alt="Step 3 Image">
+                    </div>
+                    <div class="inner-box1">
+                        <h3>Get New ID</h3>
+                        <p>Receive a new school ID quickly and securely.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+           
          <!-- About Section -->
          <div id="about-section" class="about-section">
             <h1>About Us</h1>
@@ -244,6 +253,7 @@
      
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
                     
                     {{-- <footer class="py-16 text-center text-sm text-black dark:text-white/70">
                         Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
