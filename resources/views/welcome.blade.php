@@ -22,7 +22,8 @@
 
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+          
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">ID Recover</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"

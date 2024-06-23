@@ -134,6 +134,7 @@
     align-items: center;
     position: relative; /* Add position relative */
     z-index: 1000; /* Ensure navbar stays on top */
+    background-color: #a295f0; /* Change background color */
 }
 
 /* Center align the main navigation */

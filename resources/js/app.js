@@ -41,7 +41,10 @@ document.addEventListener('DOMContentLoaded', function () {
             document.querySelector("#sidebar").classList.toggle("expand");
         });
     }
-
+// Define toggleSidebar function globally or within the same scope
+function toggleSidebar() {
+    document.querySelector("#sidebar").classList.toggle("expand");
+}
     // Show Found ID form
     function showFoundIdForm() {
         const mainContent = document.getElementById('main-content');
@@ -82,9 +85,3 @@ document.addEventListener('DOMContentLoaded', function () {
         dateInput.value = today;
     }
 });
-//landing page background
-var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 1,
-    spaceBetween: 30,
-    loop: true,
-  });
