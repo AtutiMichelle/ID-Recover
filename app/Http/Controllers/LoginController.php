@@ -9,9 +9,7 @@ class LoginController extends Controller
      
     public function index()
     {
-
-
-        return view('admin.adminDashboard');
+        return view('dashboard'); // Change this to the user dashboard view
     }
 
     
