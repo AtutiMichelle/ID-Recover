@@ -38,13 +38,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const hamBurger = document.querySelector(".toggle-btn");
     if (hamBurger) {
         hamBurger.addEventListener("click", function () {
-            document.querySelector("#sidebar").classList.toggle("expand");
+            // document.querySelector("#sidebar").classList.toggle("expand");
         });
     }
-// Define toggleSidebar function globally or within the same scope
-function toggleSidebar() {
-    document.querySelector("#sidebar").classList.toggle("expand");
-}
+
+
     // Show Found ID form
     function showFoundIdForm() {
         const mainContent = document.getElementById('main-content');

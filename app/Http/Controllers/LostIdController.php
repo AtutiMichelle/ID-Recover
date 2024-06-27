@@ -53,20 +53,44 @@ class LostIdController extends Controller
 
     public function retrieveForm()
     {
-        return view('user.retrieve_lost_id');
+        {
+            $lostId = LostId::all(); // Retrieve all lost IDs or you can leave it empty if no initial data is needed
+            return view('user.retrieve_lost_id', compact('lostId'));
+        }
     }
 
     public function retrieveData(Request $request)
+{
+    $search = $request->input('search');
+    $lostId = LostId::where('admission', 'LIKE', "%{$search}%")
+                    ->orWhere('name', 'LIKE', "%{$search}%")
+                    ->orWhere('date_lost', 'LIKE', "%{$search}%")
+                    ->orWhere('email', 'LIKE', "%{$search}%")
+                    ->orWhere('phone_number', 'LIKE', "%{$search}%")
+                    ->get();
+
+    return view('user.retrieve_lost_id', compact('lostId', 'search'));
+}
+
+    public function editLostId($id)
     {
-        $search = $request->input('search');
+        $lostId = LostId::findOrFail($id);
+        return view('user.edit_lost_id', compact('lostId'));
+    }
 
-        $lostIds = LostId::where('admission', 'LIKE', "%{$search}%")
-                        ->orWhere('name', 'LIKE', "%{$search}%")
-                        ->orWhere('date_lost', 'LIKE', "%{$search}%")
-                        ->orWhere('email', 'LIKE', "%{$search}%")
-                        ->orWhere('phone_number', 'LIKE', "%{$search}%")
-                        ->get();
+    public function updateLostId(Request $request, $id)
+    {
+        $validatedData = $request->validate([
+            'admission' => 'required|string',
+            'name' => 'required|string',
+            'date_lost' => 'required|date',
+            'email' => 'required|email',
+            'phone_number' => 'required|string',
+        ]);
 
-        return view('user.retrieve_lost_id', ['lostIds' => $lostIds]);
+        $lostId = LostId::findOrFail($id);
+        $lostId->update($validatedData);
+
+        return redirect()->route('retrieve_lost_id.form')->with('status', 'Lost ID updated successfully!');
     }
 }

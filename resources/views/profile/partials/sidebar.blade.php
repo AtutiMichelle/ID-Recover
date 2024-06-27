@@ -25,7 +25,7 @@
         <hr>
         <br>
         <li class="sidebar-item">
-            <a href="{{ route('reti_found_id') }}" class="sidebar-link" onclick="showFoundIdForm();">
+            <a href="{{ route('retrieve_lost_id.form') }}" class="sidebar-link">
                 <i class='bx bx-id-card'></i>
                 <span class="text">Lost ID List</span>
             </a>

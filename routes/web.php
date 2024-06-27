@@ -82,4 +82,6 @@ Route::post('/report_lost_id', [LostIdController::class, 'submitForm'])->name('r
 
 Route::get('/retrieve_lost_id', [LostIdController::class, 'retrieveForm'])->name('retrieve_lost_id.form');
 Route::post('/retrieve_lost_id', [LostIdController::class, 'retrieveData'])->name('retrieve_lost_id.search');
+Route::get('/edit_lost_id/{id}', [LostIdController::class, 'editLostId'])->name('edit_lost_id');
+Route::post('/update_lost_id/{id}', [LostIdController::class, 'updateLostId'])->name('update_lost_id');
 

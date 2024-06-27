@@ -26,45 +26,50 @@
 	<!-- NAVBAR -->
             <!-- Main content area -->
             <main>
-        <h2 class="mb-4">List of Lost IDs</h2>
+            <h2>Retrieve Lost IDs</h2>
 
-        <!-- Search Form -->
-        <form action="{{ route('retrieve_posted_id') }}" method="GET" class="mb-4">
-            <div class="input-group">
-                <input type="text" name="search" class="form-control" placeholder="Search..." value="{{ $search }}">
-                <button class="btn btn-primary" type="submit">Search</button>
-            </div>
-        </form>
-    
-        <table class="table table-bordered">
-            <thead>
-                <tr class="table-primary">
-                    <th>Admission</th>
-                    <th>Name</th>
-                    <th>Course</th>
-                    <th>Date Lost</th>
-                    <th>Email</th>
-                    <th>Phone Number</th>
-                    <th>Actions</th> <!-- New column for actions -->
-                </tr>
-            </thead>
-            <tbody>
-                @foreach($foundId as $found)
-                <tr>
-                    <td>{{ $found->id }}</td>
-                    <td>{{ $found->admission }}</td>
-                    <td>{{ $found->name }}</td>
-                    <td>{{ $found->course }}</td>
-                    <td>{{ $found->date_lost }}</td>
-                    <td>{{ $found->email }}</td>
-                    <td>{{ $found->phone_number }}</td>
-                    
-                    <td>
-                        {{-- <a href="{{ route('edit_found_id', $found->id) }}" class="btn btn-sm btn-primary">Update</a> --}}
-                    </td>
-                </tr>
-                @endforeach
+            <form action="{{ route('retrieve_lost_id.search') }}" method="POST" class="mb-4">
+                @csrf
+                <div class="input-group">
+                    <input type="text" name="search" class="form-control" placeholder="Search by Admission, Name, Email, or Phone Number">
+                    <button class="btn btn-primary" type="submit">Search</button>
+                </div>
+            </form>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+            @if (session('status'))
+                <div class="alert alert-success">
+                    {{ session('status') }}
+                </div>
+            @endif
+
+            <table class="table table-bordered">
+                <thead>
+                    <tr class="table-primary">
+                        <th>Admission</th>
+                        <th>Name</th>
+                        <th>Date Lost</th>
+                        <th>Email</th>
+                        <th>Phone Number</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($lostId as $lostId)
+                        <tr>
+                            <td>{{ $lostId->admission }}</td>
+                            <td>{{ $lostId->name }}</td>
+                            <td>{{ $lostId->date_lost }}</td>
+                            <td>{{ $lostId->email }}</td>
+                            <td>{{ $lostId->phone_number }}</td>
+                            <td>
+                                <a href="{{ route('edit_lost_id', $lostId->id) }}" class="btn btn-primary">Update</a>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+    </main>
+</section>
 </body>
 </html>
