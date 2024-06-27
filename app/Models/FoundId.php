@@ -26,4 +26,9 @@ class FoundId extends Model
     return $this->belongsTo(User::class);
 }
 
+public function lostId()
+    {
+        return $this->belongsTo(LostId::class, 'admission', 'admission_on_id');
+    }
+
 }
