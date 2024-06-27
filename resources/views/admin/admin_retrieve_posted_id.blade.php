@@ -15,7 +15,7 @@
 </head>
 <body>
     <!-- SIDEBAR -->
-@include('profile.partials.sidebar') <!-- Include sidebar directly -->
+@include('profile.partials.admin_sidebar') <!-- Include sidebar directly -->
 
 <!-- SIDEBAR -->
 
@@ -48,14 +48,20 @@
                     <th>Finder's Email</th>
                     <th>Finder's Phone Number</th>
                     <th>Image</th>
-                    <th>Actions</th> <!-- New column for actions -->
+                   
                 </tr>
             </thead>
             <tbody>
                 @foreach($foundId as $found)
                 <tr>
                     <td>{{ $found->id }}</td>
-                    <td>{{ $found->admission_on_id }}</td>
+                    <td>
+                        @if(auth()->user()->isAdmin())
+                            {{ $found->admission_on_id }}
+                        @else
+                            {{ substr_replace(substr_replace($found->admission_on_id, 'xx', 0, 2), 'xx', -2) }}
+                        @endif
+                    </td>
                     <td>{{ $found->name_on_id }}</td>
                     <td>{{ $found->course_on_id }}</td>
                     <td>{{ $found->location_found }}</td>
@@ -73,9 +79,7 @@
                             No Image
                         @endif
                     </td>
-                    <td>
-                        <a href="{{ route('edit_found_id', $found->id) }}" class="btn btn-sm btn-primary">Update</a>
-                    </td>
+                    
                 </tr>
                 @endforeach
 

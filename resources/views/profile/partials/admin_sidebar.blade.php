@@ -1,4 +1,5 @@
-<!-- resources/views/profile/partials/sidebar.blade.php -->
+<!-- resources/views/profile/partials/admin_sidebar.blade.php -->
+
 <section id="sidebar">
     <a href="#" class="brand">
         <i class='bx bxs-smile'></i>
@@ -17,7 +18,7 @@
         <hr>
         <br>
         <li class="sidebar-item">
-            <a href="{{ route('dashboard') }}" class="sidebar-link">
+            <a href= class="sidebar-link">
               <i class='bx bxs-dashboard'></i>
                 <span class="text">Dashboard</span>
             </a>
@@ -25,23 +26,15 @@
         <hr>
         <br>
         <li class="sidebar-item">
-            <a href="{{ route('reti_found_id') }}" class="sidebar-link" onclick="showFoundIdForm();">
+            <a href="{{ route('report_lost_id.form') }}" class="sidebar-link" onclick="showFoundIdForm();">
                 <i class='bx bx-id-card'></i>
-                <span class="text">Lost ID List</span>
+                <span class="text">Report Lost ID</span>
             </a>
         </li>
         <hr>
         <br>
         <li class="sidebar-item">
-            <a href="{{ route('submit_found_id') }}" class="sidebar-link" onclick="showFoundIdForm();">
-                <i class='bx bx-upload'></i>
-                <span class="text">Post Found IDs</span>
-            </a>
-        </li>
-        <hr>
-        <br>
-        <li class="sidebar-item">
-            <a href="{{ route('retrieve_posted_id') }}" class="sidebar-link">
+            <a href="{{ route('admin_retrieve_posted_id') }}" class="sidebar-link">
                 <i class='bx bx-clipboard'></i>
                 <span class="text">View Found IDs</span>
             </a>
@@ -54,12 +47,10 @@
                 <span class="text">ID Replacement</span>
             </a>
         </li>
-        
         <hr>
+        <br>
     </ul>
     <ul class="side-menu">
-        
-        </li>
         <li>
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
@@ -70,4 +61,4 @@
             </form>
         </li>
     </ul>
-  </section>
+</section>
