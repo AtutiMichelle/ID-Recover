@@ -40,28 +40,28 @@
             <label for="admission_on_id">Admission on ID:</label>
             <input type="text" name="admission_on_id" class="form-control" value="{{ $foundId->admission_on_id }}" required>
         </div>
-        
+        <br>
         <div class="form-group">
             <label for="name_on_id">Name on ID:</label>
             <input type="text" name="name_on_id" class="form-control" value="{{ $foundId->name_on_id }}" required>
         </div>
-        
+        <br>
         <div class="form-group">
             <label for="course_on_id">Course on ID:</label>
             <input type="text" name="course_on_id" class="form-control" value="{{ $foundId->course_on_id }}" required>
         </div>
         
-        <div class="form-group">
+        {{-- <div class="form-group">
             <label for="location_found">Location Found:</label>
             <input type="text" name="location_found" class="form-control" value="{{ $foundId->location_found }}" required>
-        </div>
-        
+        </div> --}}
+        <br>
         <div class="form-group">
             <label for="date_found">Date Found:</label>
             <input type="date" name="date_found" class="form-control" value="{{ $foundId->date_found }}" required>
         </div>
-        
-        <div class="form-group">
+        <br>
+        {{-- <div class="form-group">
             <label for="finder_email">Finder's Email:</label>
             <input type="email" name="finder_email" class="form-control" value="{{ $foundId->finder_email }}" required>
         </div>
@@ -69,7 +69,7 @@
         <div class="form-group">
             <label for="finder_phone_number">Finder's Phone Number:</label>
             <input type="text" name="finder_phone_number" class="form-control" value="{{ $foundId->finder_phone_number }}" required>
-        </div>
+        </div> --}}
 
         <div class="form-group">
             <label for="image_url">Image:</label>

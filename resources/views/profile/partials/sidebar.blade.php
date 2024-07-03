@@ -49,6 +49,15 @@
         <hr>
         <br>
         <li class="sidebar-item">
+            <a href="{{ route('view_users') }}" class="sidebar-link">
+                <i class='bx bxs-user-check'></i>
+                <span class="text">View System Users</span>
+            </a>
+        </li>
+        <hr>
+        <br>
+
+        <li class="sidebar-item">
             <a href="{{ route('id_replacement_form') }}" class="sidebar-link">
                 <i class='bx bx-refresh'></i>
                 <span class="text">ID Replacement</span>

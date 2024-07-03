@@ -292,13 +292,7 @@
 
   <!-- Main CSS File -->
   @vite(['resources/css/welcome.css', 'resources/js/welcome.js'])  
-  <!-- =======================================================
-  * Template Name: QuickStart
-  * Template URL: https://bootstrapmade.com/quickstart-bootstrap-startup-website-template/
-  * Updated: Jun 14 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  
 </head>
 
 <body class="index-page">
@@ -415,7 +409,7 @@
                 <img src="{{ asset('img/about-company-2.jpg ') }}" class="img-fluid" alt="">
               </div>
               <div class="col-lg-12">
-                <img src="{{ asset('img/about-company-3.jpg') }}" class="img-fluid" alt="">
+                <img src="{{ asset('undergrad1.jpg') }}" class="img-fluid" alt="">
               </div>
             </div>
           </div>

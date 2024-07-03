@@ -59,7 +59,7 @@
 							<div class="input-box">
 								<span class="icon"><i class='fas fa-calendar-alt'></i></span>
 								<x-text-input id="date_lost" class="block mt-1 w-full" type="date" name="date_lost" required />
-								{{-- <label for='date_lost'>Date Lost</label> --}}
+								 {{-- <label for='date_lost'>Date Lost</label>  --}}
 								<x-input-error :messages="$errors->get('date_lost')" class="mt-2" />
 							</div>
 							<div class="input-box">

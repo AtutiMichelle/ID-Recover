@@ -43,10 +43,10 @@
                     <th>Admission on ID</th>
                     <th>Name on ID</th>
                     <th>Course on ID</th>
-                    <th>Location Found</th>
+                    {{-- <th>Location Found</th> --}}
                     <th>Date Found</th>
-                    <th>Finder's Email</th>
-                    <th>Finder's Phone Number</th>
+                    {{-- <th>Finder's Email</th>
+                    <th>Finder's Phone Number</th> --}}
                     <th>Image</th>
                    
                 </tr>
@@ -64,10 +64,10 @@
                     </td>
                     <td>{{ $found->name_on_id }}</td>
                     <td>{{ $found->course_on_id }}</td>
-                    <td>{{ $found->location_found }}</td>
+                    {{-- <td>{{ $found->location_found }}</td> --}}
                     <td>{{ $found->date_found }}</td>
-                    <td>{{ $found->finder_email }}</td>
-                    <td>{{ $found->finder_phone_number }}</td>
+                    {{-- <td>{{ $found->finder_email }}</td>
+                    <td>{{ $found->finder_phone_number }}</td> --}}
                     <td>
                         @if($found->image_url)
                             @if(auth()->user()->isAdmin())

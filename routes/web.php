@@ -8,6 +8,7 @@ use App\Http\Controllers\FoundIdController;
 use App\Http\Controllers\IdReplacementController;
 use App\Http\Controllers\LostIdController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\UserManagementController;
 
 
 Route::get('/', function () {
@@ -85,3 +86,7 @@ Route::post('/retrieve_lost_id', [LostIdController::class, 'retrieveData'])->nam
 Route::get('/edit_lost_id/{id}', [LostIdController::class, 'editLostId'])->name('edit_lost_id');
 Route::post('/update_lost_id/{id}', [LostIdController::class, 'updateLostId'])->name('update_lost_id');
 
+Route::get('/users', [UserManagementController::class, 'index'])->name('view_users');
+Route::get('/users/{id}/edit', [UserManagementController::class, 'edit'])->name('edit_user');
+Route::put('/users/{id}', [UserManagementController::class, 'update'])->name('update_user');
+Route::delete('/users/{id}', [UserManagementController::class, 'destroy'])->name('delete_user');

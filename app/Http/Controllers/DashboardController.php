@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User; // Assuming User model is used
+use Illuminate\Support\Facades\Auth;
 use App\Models\LostId;
 use App\Models\FoundId;
-use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
@@ -21,16 +22,14 @@ class DashboardController extends Controller
             $foundIdCount = FoundId::count();
             // $idReplacementCount = IdReplacement::count(); // Uncomment when ready
 
-            // Pass counts to the admin view
-            return view('dashboard', compact('lostIdCount', 'foundIdCount'));
+            // Fetch new users
+            $newUsers = User::orderBy('created_at', 'desc')->take(5)->get(); // Example query to fetch 5 most recent users
+
+            // Pass counts and new users to the admin view
+            return view('dashboard', compact('lostIdCount', 'foundIdCount', 'newUsers'));
         } else {
             // Regular user dashboard
             return view('admin.adminDashboard');
         }
     }
 }
-
-
-        // remember to add idReplacement to above view when you create
-
-
