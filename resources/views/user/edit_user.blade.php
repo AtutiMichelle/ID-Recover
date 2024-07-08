@@ -24,7 +24,7 @@
 	<!-- CONTENT -->
 	<section id="content">
 		<!-- NAVBAR -->
-    
+        @include('profile.partials.navbar') <!-- Include sidebar directly -->
 	<!-- NAVBAR -->
 
 		<!-- MAIN -->

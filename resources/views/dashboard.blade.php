@@ -52,20 +52,21 @@
 				<li>
 					<i class='bx bx-id-card'></i>
 					<span class="text">
-						{{-- <h3>{{ $lostIdCount }}</h3> --}}
+						<h3>{{ $lostIdCount }}</h3>
 						<p>Lost IDs</p>
 					</span>
 				</li>
 				<li>
 					<i class='bx bx-search'></i>
 					<span class="text">
-						{{-- <h3>{{ $foundIdCount }}</h3> --}}
+						<h3>{{ $foundIdCount }}</h3>
 						<p>Found IDs</p>
 					</span>
 				</li>
 				<li>
 					<i class='bx bx-refresh'></i>
 					<span class="text">
+						2
 						{{-- <h3>{{ $idReplacementCount }}</h3> --}}
 						<p>ID Replacements</p>
 					</span>

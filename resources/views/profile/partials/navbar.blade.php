@@ -3,14 +3,14 @@
     <i class='bx bx-menu'></i>
     
     <form action="#">
-        <div class="form-input">
+        {{-- <div class="form-input">
             <input type="search" placeholder="Search...">
             <button type="submit" class="search-btn"><i class='bx bx-search'></i></button>
-        </div>
+        </div> --}}
     </form>
-    <input type="checkbox" id="switch-mode" hidden>
+    {{-- <input type="checkbox" id="switch-mode" hidden>
     <label for="switch-mode" class="switch-mode"></label>
-    
+     --}}
     <div class="profile user-info1">
         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
             <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>

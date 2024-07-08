@@ -2,7 +2,7 @@
 
 <section id="sidebar">
     <a href="#" class="brand">
-        <i class='bx bxs-smile'></i>
+        <i class='bx bxs-id-card' ></i>
         <span class="text">ID Recover</span>
     </a>
     <ul class="side-menu top">
@@ -18,7 +18,7 @@
         <hr>
         <br>
         <li class="sidebar-item">
-            <a href= class="sidebar-link">
+            <a href="{{ route('adminDashboard') }}" class="sidebar-link">
               <i class='bx bxs-dashboard'></i>
                 <span class="text">Dashboard</span>
             </a>
@@ -42,7 +42,7 @@
         <hr>
         <br>
         <li class="sidebar-item">
-            <a href="{{ route('id_replacement_form') }}" class="sidebar-link">
+            <a href="{{ route('id_replacement.form') }}" class="sidebar-link">
                 <i class='bx bx-refresh'></i>
                 <span class="text">ID Replacement</span>
             </a>
