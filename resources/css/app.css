@@ -316,20 +316,21 @@ h1 {
 
 
         /* form for lost ids */
-.login-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f2f5; /* Optional background color for the page */
-}
+        .login-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Set minimum height to full viewport height */
+            background-color: #f0f2f5; /* Optional background color for the page */
+        }
+        
 
 .form-box.login {
     background: #fff;
     padding: 60px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    max-width: 400px;
+    max-width: 500px;
     width: 100%;
 }
 
@@ -468,6 +469,33 @@ h1 {
 }
 
 /* table for posted ids */     
+
+.btn-getstarted {
+    background-color: #007bff; /* Blue color */
+    color: white;
+    border-radius: 25px; /* Rounded corners */
+    padding: 10px 20px;
+    width: 180px; /* Same width for all buttons */
+    text-align: center;
+}
+
+.btn-getstarted:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    color: white;
+}
+
+
+ul.styled-list1 {
+    list-style-type: disc; /* Set bullets as the list style */
+    margin-left: 20px; /* Add some margin to the left */
+    font-family: Arial, sans-serif; /* Set font family */
+    font-size: 16px; /* Set font size */
+    color: #333; /* Set text color */
+}
+
+ul.styled-list1 li {
+    margin-bottom: 10px; /* Add space between list items */
+}
 
 /* body {
     font-family: 'Times New Roman', Times, serif;

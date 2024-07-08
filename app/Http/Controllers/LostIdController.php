@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\LostId;
 use App\Models\FoundId;
+use App\Models\IdReplacement;
 use Illuminate\Support\Facades\Auth;
 
 class LostIdController extends Controller
@@ -92,5 +93,16 @@ class LostIdController extends Controller
         $lostId->update($validatedData);
 
         return redirect()->route('retrieve_lost_id.form')->with('status', 'Lost ID updated successfully!');
+    }
+
+    public function showDashboard()
+    {
+        $user = Auth::user();
+
+        // Retrieve lost ID reports and ID replacements
+        $lostIdReports = LostId::where('email', $user->email)->get();
+        $idReplacements = IdReplacement::where('email', $user->email)->get();
+
+        return view('admin.adminDashboard', compact('lostIdReports', 'idReplacements'));
     }
 }

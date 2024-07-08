@@ -7,6 +7,7 @@ use App\Models\User; // Assuming User model is used
 use Illuminate\Support\Facades\Auth;
 use App\Models\LostId;
 use App\Models\FoundId;
+use App\Models\IdReplacement;
 
 class DashboardController extends Controller
 {

@@ -9,7 +9,7 @@ use App\Http\Controllers\IdReplacementController;
 use App\Http\Controllers\LostIdController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserManagementController;
-
+use App\Models\LostId;
 
 Route::get('/', function () {
     return view('welcome');
@@ -31,8 +31,9 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['au
 //     ->middleware(['auth', 'admin']);
 
 
-Route::get('/admin/dashboard', [LoginController::class, 'index'])
-    ->middleware(['auth', 'admin']);
+Route::get('/admin/dashboard', [LoginController::class, 'index']) ->name('adminDashboard');
+Route::get('/admin/dashboard', [LostIdController::class, 'showDashboard'])->name('adminDashboard');
+// Route::get('/admin/dashboard', [IdReplacementController::class, 'showDashboard'])->name('adminDashboard');
 
 Route::get('/user', function () {
     return view('user');
@@ -46,8 +47,9 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('admin/dashboard', [LoginController::class, 'index'])
-    ->middleware(['auth', 'admin']);
+Route::get('admin/dashboard', [LoginController::class, 'index'])->name('adminDashboard');
+Route::get('/admin/dashboard', [LostIdController::class, 'showDashboard'])->name('adminDashboard');
+// Route::get('/admin/dashboard', [IdReplacementController::class, 'showDashboard'])->name('adminDashboard');
 
 Route::get('/socialite/{driver}', [SocialLoginController::class, 'toProvider'])
     ->where('driver', 'github|google');
@@ -65,18 +67,19 @@ Route::get('/retrieve_posted_id', [FoundIdController::class, 'retrievePostedId']
     Route::get('/admin_retrieve_posted_id', [FoundIdController::class, 'adminretrievePostedId'])
     ->name('admin_retrieve_posted_id');
 
-Route::get('/id_replacement', [IdReplacementController::class, 'showIdReplacementForm'])
-    ->name('id_replacement_form');
-Route::post('/submit-id-replacement', [IdReplacementController::class, 'submitIdReplacement'])
-    ->name('submit_id_replacement');
+// Route::get('/id_replacement', [IdReplacementController::class, 'showIdReplacementForm'])
+//     ->name('id_replacement_form');
+// Route::post('/submit-id-replacement', [IdReplacementController::class, 'submitIdReplacement'])
+//     ->name('submit_id_replacement');
 
 Route::get('/edit-found-id/{id}', [FoundIdController::class, 'edit'])
     ->name('edit_found_id');
 Route::put('/update-found-id/{id}', [FoundIdController::class, 'update'])
     ->name('update_found_id');
 
-    Route::get('/report_lost_id', [LostIdController::class, 'createForm'])->name('report_lost_id.form');
+Route::get('/report_lost_id', [LostIdController::class, 'createForm'])->name('report_lost_id.form');
 Route::post('/report_lost_id', [LostIdController::class, 'submitForm'])->name('report_lost_id.submit');
+
 
 // for the cards displaying number of found ,lost ids
 // Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
@@ -90,3 +93,14 @@ Route::get('/users', [UserManagementController::class, 'index'])->name('view_use
 Route::get('/users/{id}/edit', [UserManagementController::class, 'edit'])->name('edit_user');
 Route::put('/users/{id}', [UserManagementController::class, 'update'])->name('update_user');
 Route::delete('/users/{id}', [UserManagementController::class, 'destroy'])->name('delete_user');
+
+
+
+Route::get('/id-replacement', [IdReplacementController::class, 'showForm'])->name('id_replacement.form');
+Route::post('/id-replacement-expired', [IdReplacementController::class, 'submitExpired'])->name('id_replacement.submit_expired');
+Route::post('/id-replacement-lost', [IdReplacementController::class, 'submitLost'])->name('id_replacement.submit_lost');
+Route::get('/admin/id-replacements', [IdReplacementController::class, 'showAllReplacements'])->name('id_replacements.list');
+
+// Route::get('/id-replacement', [IdReplacementController::class, 'showForm'])->name('id-replacement-form');
+// Route::post('/id-replacement-expired', [IdReplacementController::class, 'submitExpired'])->name('id-replacement-submit-expired');
+// Route::post('/id-replacement-lost', [IdReplacementController::class, 'submitLost'])->name('id-replacement-submit-lost');

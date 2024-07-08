@@ -46,9 +46,9 @@
             
             <p class="social-text">Or Sign in with social platforms</p>
             <div class="social-media">
-                <a href="/socialite/github" class="social-icon">
+                {{-- <a href="/socialite/github" class="social-icon">
                     <i class="fab fa-github"></i>
-                </a>
+                </a> --}}
                 <a href="/socialite/google" class="social-icon">
                     <i class="fab fa-google"></i>
                 </a>
