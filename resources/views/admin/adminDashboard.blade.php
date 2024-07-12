@@ -11,7 +11,7 @@
   
 	<!-- My CSS -->
 	
-	<title>Admin Dashboard</title>
+	<title>User Dashboard</title>
 </head>
 <body>
 

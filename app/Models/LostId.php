@@ -9,6 +9,7 @@ class LostId extends Model
     use HasFactory;
 
     protected $fillable = [
+        'user_id',
         'admission',
         'name',
         'course',

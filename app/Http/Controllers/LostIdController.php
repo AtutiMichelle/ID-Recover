@@ -35,8 +35,12 @@ class LostIdController extends Controller
             return redirect()->back()->with('status', 'This ID has already been found.');
         }
 
+        // Get the authenticated user
+        $user = Auth::user();
+
         // Create a new LostId instance
         $lostId = new LostId([
+            'user_id' => $user->id,
             'admission' => $request->admission,
             'name' => $request->name,
             'course' => $request->course,

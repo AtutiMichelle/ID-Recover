@@ -10,6 +10,7 @@ class IdReplacement extends Model
     use HasFactory;
 
     protected $fillable = [
+        'user_id',
         'admission',
         'name',
         'email',

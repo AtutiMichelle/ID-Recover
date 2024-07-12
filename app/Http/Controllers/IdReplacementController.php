@@ -31,8 +31,12 @@ class IdReplacementController extends Controller
         $photoPath = $request->file('photo')->store('photos');
         $idPhotoPath = $request->file('id_photo_expired')->store('id_photos');
 
+
+        $user = Auth::user();
+
         // Save the request to database
         IdReplacement::create([
+            'user_id' => $user->id,
             'admission' => $request->admission,
             'name' => $request->name,
             'email' => $request->email,
@@ -71,8 +75,11 @@ class IdReplacementController extends Controller
         $photoPath = $request->file('photo')->store('photos');
         $abstractPath = $request->file('police_abstract')->store('abstracts');
 
+        $user = Auth::user();
+
         // Save the request to database
         IdReplacement::create([
+            'user_id' => $user->id,
             'admission' => $request->admission,
             'name' => $request->name,
             'email' => $request->email,
