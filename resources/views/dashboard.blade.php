@@ -66,8 +66,8 @@
 				<li>
 					<i class='bx bx-refresh'></i>
 					<span class="text">
-						2
-						{{-- <h3>{{ $idReplacementCount }}</h3> --}}
+						
+						<h3>{{ $idReplacementCount }}</h3>
 						<p>ID Replacements</p>
 					</span>
 				</li>

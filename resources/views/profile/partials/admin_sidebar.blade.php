@@ -26,6 +26,15 @@
         <hr>
         <br>
         <li class="sidebar-item">
+            <a href="{{ route('id_replacement.form') }}" class="sidebar-link">
+                <i class='bx bx-refresh'></i>
+                <span class="text">ID Replacement</span>
+            </a>
+        </li>
+        
+        <hr>
+        <br>
+        <li class="sidebar-item">
             <a href="{{ route('report_lost_id.form') }}" class="sidebar-link" onclick="showFoundIdForm();">
                 <i class='bx bx-id-card'></i>
                 <span class="text">Report Lost ID</span>
@@ -41,14 +50,8 @@
         </li>
         <hr>
         <br>
-        <li class="sidebar-item">
-            <a href="{{ route('id_replacement.form') }}" class="sidebar-link">
-                <i class='bx bx-refresh'></i>
-                <span class="text">ID Replacement</span>
-            </a>
-        </li>
-        <hr>
-        <br>
+        
+        
     </ul>
     <ul class="side-menu">
         <li>

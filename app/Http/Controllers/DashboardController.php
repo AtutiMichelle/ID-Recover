@@ -21,13 +21,13 @@ class DashboardController extends Controller
             // Fetch counts from respective tables
             $lostIdCount = LostId::count();
             $foundIdCount = FoundId::count();
-            // $idReplacementCount = IdReplacement::count(); // Uncomment when ready
+            $idReplacementCount = IdReplacement::count(); // Uncomment when ready
 
             // Fetch new users
             $newUsers = User::orderBy('created_at', 'desc')->take(5)->get(); // Example query to fetch 5 most recent users
 
             // Pass counts and new users to the admin view
-            return view('dashboard', compact('lostIdCount', 'foundIdCount', 'newUsers'));
+            return view('dashboard', compact('lostIdCount', 'foundIdCount', 'idReplacementCount' , 'newUsers'));
         } else {
             // Regular user dashboard
             return view('admin.adminDashboard');

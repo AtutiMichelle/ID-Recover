@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('lost_ids', function (Blueprint $table) {
-            $table->id();
+                $table->id();
+                $table->foreignId('user_id')->constrained()->onDelete('cascade');
                 $table->string('admission');
                 $table->string('name');
                 $table->string('course');

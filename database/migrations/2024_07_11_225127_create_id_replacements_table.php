@@ -13,13 +13,14 @@ return new class extends Migration
     {
         Schema::create('id_replacements', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('admission');
             $table->string('name');
             $table->string('email');
             $table->string('faculty'); // Example: School, Faculty, etc.
             $table->string('course');
             $table->string('photo_path'); // Ensure this column is defined
-            // $table->string('status')->default('pending'); // Status: pending, approved, rejected
+            $table->string('status')->default('pending'); // Status: pending, approved, rejected
             $table->string('id_photo_expired_path')->nullable(); // For expired IDs
             $table->string('police_abstract_path')->nullable(); // For lost IDs
             $table->timestamps();
