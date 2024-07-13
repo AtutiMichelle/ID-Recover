@@ -13,10 +13,14 @@ use Illuminate\Support\Facades\Mpesa;
 use Illuminate\Support\Carbon;
 use Illuminate\Broadcasting\Broadcasters\AblyBroadcaster;
 
-@csrf_field();
 class PayController extends Controller{
+    public function index(Request $request){
+        return view("payment.pay");
+    }
 
     public function initiateStkPush(Request $request){
+        $Amount = $request->input("amount");
+        $PartyA = $this->parseMpesaPhoneNumber($request->input('phone'));
         if(isset($_POST['submit1'])){
 
 
@@ -39,10 +43,10 @@ class PayController extends Controller{
     for developer/test accounts, this money will be reversed automatically by midnight.
   */
   
-   $PartyA = '254712261994'; // This is your phone number, 
+   $PartyA = ''; // This is your phone number, 
   $AccountReference = '2255';
   $TransactionDesc = 'Test Payment';
-  $Amount = '1';;
+  $Amount = '';;
  
   # Get the timestamp, format YYYYmmddhms -> 20181004151020
   $Timestamp = date('YmdHis');    
@@ -58,7 +62,7 @@ class PayController extends Controller{
   $initiate_url = 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest';
 
   # callback url
-  $CallBackURL = 'http://127.0.0.1:8000 ';  
+  $CallBackURL = 'https://11b9-197-136-185-70.ngrok-free.app';  
 
   $curl = curl_init($access_token_url);
   curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
@@ -103,7 +107,27 @@ class PayController extends Controller{
 
   echo $curl_response;
         }
+        
 }
+
+private function parseMpesaPhoneNumber($contact)
+    {
+        if (!$contact) {
+            return false;
+        }
+
+        if (substr($contact, 0, 4) === "+254" && strlen($contact) === 13) {
+            return str_replace("+254", "254", $contact);
+        } elseif (substr($contact, 0, 3) === "254" && strlen($contact) === 12) {
+            return $contact;
+        } elseif (substr($contact, 0, 1) === "0" && strlen($contact) === 10) {
+            return "254" . substr($contact, 1);
+        } elseif (strlen($contact) === 9) {
+            return "254" . $contact;
+        }
+
+        return false;
+  }
 
 
     public function stkCallback(){
