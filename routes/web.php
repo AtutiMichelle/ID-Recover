@@ -8,6 +8,7 @@ use App\Http\Controllers\FoundIdController;
 use App\Http\Controllers\IdReplacementController;
 use App\Http\Controllers\LostIdController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PayController;
 use App\Http\Controllers\UserManagementController;
 use App\Models\LostId;
 
@@ -101,6 +102,32 @@ Route::post('/id-replacement-expired', [IdReplacementController::class, 'submitE
 Route::post('/id-replacement-lost', [IdReplacementController::class, 'submitLost'])->name('id_replacement.submit_lost');
 Route::get('/admin/id-replacements', [IdReplacementController::class, 'showAllReplacements'])->name('id_replacements.list');
 
+Route::get('/initiate-stk-push', [PayController::class, 'initiateStkPush']);
+Route::post('/initiate-stk-push', [PayController::class, 'initiateStkPush']);
+Route::get('/payment', [PayController::class,'initiateStkPush']);
+Route::get('/payment', function () {
+    return view('payment\pay');
+});
 // Route::get('/id-replacement', [IdReplacementController::class, 'showForm'])->name('id-replacement-form');
 // Route::post('/id-replacement-expired', [IdReplacementController::class, 'submitExpired'])->name('id-replacement-submit-expired');
 // Route::post('/id-replacement-lost', [IdReplacementController::class, 'submitLost'])->name('id-replacement-submit-lost');
+
+// Route::controller(PayController::class)
+// ->prefix('pay')
+// ->as('pay')
+// ->group(function () {
+//     Route::get('/pay/initiateStkPush', [PayController::class, 'initiateStkPush']);
+//     Route::post('/pay/stkCallback', [PayController::class, 'stkCallback']);
+// });
+
+
+// Route::controller(PayController::class)
+// ->prefix('pay')
+// ->as('pay')
+// ->group(function () {
+//     Route::get('/pay/token', [PayController::class, 'token']);
+//     Route::post('/pay/token', [PayController::class, 'token']);
+// });
+
+// Route::get('/initiateStkPush', [PayController::class, 'initiateStkPush'])->name('mpesaStk_push');
+// Route::post('/payments/stkCallback', [PayController::class, 'stkCallback']);

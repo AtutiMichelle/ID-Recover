@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -96,6 +95,7 @@
                         <label for="id_photo_expired">Photo of Expired/Broken ID</label>
                     </div>
                     <br>
+                  {{--  <input type="hidden" name="form_data" value="{{ json_encode($expiredFormData) }}">--}}
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
 
@@ -146,6 +146,7 @@
                         <label for="police_abstract">Police Abstract</label>
                     </div>
                        <br>
+                     {{--  <input type="hidden" name="form_data" value="{{ json_encode($lostFormData) }}"> --}}
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
 
@@ -185,7 +186,39 @@
         document.getElementById('btn-expired').style.display = 'none';
         document.getElementById('btn-lost').style.display = 'none';
     });
+
+    document.getElementById('submit-expired').addEventListener('click', function(event) {
+        event.preventDefault();
+        array.forEach(element => {
+            initiateStkPush('form-expired');
+        });
+       
+    });
+
+    document.getElementById('submit-lost').addEventListener('click', function(event) {
+        event.preventDefault();
+        array.forEach(element => {
+            initiateStkPush('form-lost');
+        });
+        
+    });
+
+  //  function initiateStkPush() {
+    //    .then(response => {
+      //      if (response.data.ResponseCode === '0') {
+        //        alert('Payment initiated. Please complete the payment on your phone.');
+          //      form.submit();
+            //} else {
+              //  alert('Failed to initiate payment: ' + response.data.errorMessage);
+            //}
+        //})
+        //.catch(error => {
+          //  alert('Error initiating payment: ' + error.message);
+        //});
+    //}
+
 </script>
+
 @vite(['resources/js/app.js'])
 </body>
 </html>
