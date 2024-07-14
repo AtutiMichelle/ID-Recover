@@ -202,20 +202,23 @@
         });
         
     });
+    
 
-  //  function initiateStkPush() {
-    //    .then(response => {
-      //      if (response.data.ResponseCode === '0') {
-        //        alert('Payment initiated. Please complete the payment on your phone.');
-          //      form.submit();
-            //} else {
-              //  alert('Failed to initiate payment: ' + response.data.errorMessage);
-            //}
-        //})
-        //.catch(error => {
-          //  alert('Error initiating payment: ' + error.message);
-        //});
-    //}
+//    function initiateStkPush() {
+//        .then(response => {
+//            if (response.data.ResponseCode === '0') {
+//                alert('Payment initiated. Please complete the payment on your phone.');
+//                form.submit();
+//             } else {
+//                alert('Failed to initiate payment: ' + response.data.errorMessage);
+//             }
+//         })
+//         .catch(error => {
+//            alert('Error initiating payment: ' + error.message);
+//         });
+    
+//             return redirect()->back()->with('successful payment');
+//         }
 
 </script>
 

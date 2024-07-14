@@ -104,6 +104,7 @@ Route::get('/admin/id-replacements', [IdReplacementController::class, 'showAllRe
 
 Route::get('/initiate-stk-push', [PayController::class, 'index']);
 Route::post('/initiate-stk-push', [PayController::class, 'initiateStkPush']);
+Route::post('/stkcallback', [PayController::class, 'stkCallback']);
 // Route::get('/payment', [PayController::class,'initiateStkPush']);
 // Route::get('/payment', function () {
 //     return view('payment\pay');
